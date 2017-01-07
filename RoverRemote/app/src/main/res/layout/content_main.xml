@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="leon.roverremote.MainActivity"
+    tools:showIn="@layout/activity_main">
+
+    <TextView
+        android:text="Sonar Initializing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/sonarText"
+        android:width="210dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="Back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/back_button"
+        android:onClick="goBack"
+        android:layout_alignBaseline="@+id/left_button"
+        android:layout_alignBottom="@+id/left_button"
+        android:layout_alignStart="@+id/fwd_button" />
+
+    <Button
+        android:text="Turn Right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/right_button"
+        android:onClick="turnRight"
+        android:layout_alignBaseline="@+id/back_button"
+        android:layout_alignBottom="@+id/back_button"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:text="Turn Left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/left_button"
+        android:onClick="turnLeft"
+        android:layout_below="@+id/fwd_button"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/left_button"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="13dp"
+        android:height="50dp"
+        android:id="@+id/lastCmdOutput"
+        android:layout_alignParentEnd="true" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@android:color/background_dark"
+        android:id="@+id/camView"
+        android:maxHeight="300dp"
+        android:minHeight="300dp"
+        android:maxWidth="400dp"
+        android:minWidth="400dp"
+        android:layout_below="@+id/lastCmdOutput"
+        />
+
+    <Button
+        android:text="Forward"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="goForward"
+        android:id="@+id/fwd_button"
+        android:layout_below="@+id/sonarText"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:text="Identify"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/identify_button"
+        android:onClick="identify"
+        android:layout_above="@+id/right_button"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:text="Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/camView"
+        android:layout_alignStart="@+id/identify_button"
+        android:layout_marginTop="20dp"
+        android:id="@+id/config"
+        android:onClick="showConfig" />
+
+</RelativeLayout>
